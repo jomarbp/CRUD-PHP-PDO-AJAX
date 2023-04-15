@@ -47,11 +47,12 @@
     <tbody>
       <tr><!--FILAS -->
         <td><?php echo $resultado->id; ?></td><!-- COLUMNAS -->
-        <td><?php echo utf8_encode($resultado->nombre); ?></td>
-        <td><?php echo utf8_encode($resultado->apellido); ?></td>
+        <td><?php echo $resultado->nombre; ?></td>
+        <td><?php echo $resultado->apellido; ?></td>
         <td>
-          <button type="button" class="btn btn-success">Editar</button>
-          <button type="button" class="btn btn-danger">Eliminar</button>
+          <button type="button" class="btn btn-primary editarCliente" data-clienteid="<?php echo $resultado->id; ?>" data-toggle="modal" data-target="#editarClienteModal">Editar</button>
+
+          <button type="button" class="btn btn-danger eliminarCliente" data-clienteid="<?php echo $resultado->id; ?>">Eliminar</button>
         </td>
       </tr>
     </tbody>
@@ -103,6 +104,36 @@
       
 	  <form>
 	  
+    </div>
+  </div>
+</div>
+
+
+ <!-- The Modal -->
+<div class="modal fade" id="editarClienteModal" tabindex="-1" role="dialog" aria-labelledby="editarClienteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarClienteModalLabel">Editar Cliente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editarClienteform" method="post">
+          <input type="text" name="cliente_id" id="cliente_id">
+
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" name="apellido">
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
