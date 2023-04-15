@@ -7,6 +7,9 @@ $(document).ready(function() {
       data: $(this).serialize(),
       success: function() {
         alert('Registro agregado exitosamente');
+        $("#agregarClienteform")[0].reset();
+		$("#agregarClienteModal").modal('hide');
+		 location.reload();
       },
       error: function() {
         alert('Error al agregar el registro');

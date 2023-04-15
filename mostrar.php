@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="js/jquery.slim.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+  <script type="text/javascript" src="js/script.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  
+ 
 </head>
 <body>
 
@@ -17,7 +23,7 @@
 
   <div class="container">
     <p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agregar Clientes</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarClienteModal">Agregar Clientes</button>
     </p>
 <table class="table">
     <thead>
@@ -55,13 +61,9 @@
 </table>
 
   </div>
-
-  
- </body>
-</html>
-
-<!-- The Modal -->
-<div class="modal" id="myModal">
+ 
+ <!-- The Modal -->
+<div class="modal fade" id="agregarClienteModal" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -71,35 +73,44 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
+		<form id="agregarClienteform">
       <!-- Modal body -->
       <div class="modal-body">
-        <form>
 
           <div class="form-group">
             <label for="email">Id Clientes:</label>
-            <input type="number" class="form-control" placeholder="Ingrese el id del cliente" id="idcliente">
+            <input type="text" class="form-control" placeholder="Ingrese el id del cliente" id="idcliente" name="idcliente">
           </div>
 
           <div class="form-group">
             <label for="email">Nombres completos:</label>
-            <input type="text" class="form-control" placeholder="Ingrese sus nombres completos" id="nombres">
+            <input type="text" class="form-control" placeholder="Ingrese sus nombres completos" id="nombres" name="nombres">
           </div>
 
           <div class="form-group">
             <label for="pwd">Apellidos completos:</label>
-            <input type="text" class="form-control" placeholder="Ingrese sus apellidos completos" id="apellidos">
+            <input type="text" class="form-control" placeholder="Ingrese sus apellidos completos" id="apellidos" name="apellidos">
           </div>
 
-          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="submit"  class="btn btn-primary">Guardar</button>
 
-        </form>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
-
+      
+	  <form>
+	  
     </div>
   </div>
 </div>
+
+  
+ </body>
+</html>
+
+
+
+
